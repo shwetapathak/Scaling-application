@@ -1,0 +1,40 @@
+application: assignment7-1001
+version: 1
+runtime: php55
+api_version: 1
+threadsafe: yes
+
+
+automatic_scaling:
+  min_idle_instances: 5
+  max_idle_instances: 7
+  min_pending_latency: 10ms
+  max_pending_latency: 25ms
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /
+  script: main.php
+  
+- url: /main.php
+  script: main.php
+
+- url: /upload.php
+  script: upload.php
+
+
+- url: /login.php
+  script: login.php
+  
+- url: /delete.php
+  script: delete.php
+
+   
+- url: /comment.php
+  script: comment.php
+  
+- url: /upload_handler.php
+  script: upload_handler.php
